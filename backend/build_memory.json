@@ -1,17 +1,118 @@
 {
   "version": 1,
-  "app_type": "",
-  "app_name": "",
-  "api_contract": [],
-  "frontend_endpoints": [],
-  "backend_endpoints": [],
+  "app_type": "saas_dashboard",
+  "app_name": "QL Agents",
+  "api_contract": [
+    {
+      "method": "GET",
+      "path": "/api/metrics",
+      "response": "[{deployments,timeSaved,usage}]",
+      "description": "Returns key deployment and usage metrics"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents",
+      "response": "[{id,name,status,type,lastDeployed}]",
+      "description": "List all tailored agents"
+    },
+    {
+      "method": "POST",
+      "path": "/api/agents",
+      "response": "{id,name,status,type,createdAt}",
+      "description": "Create a new tailored agent"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents/{id}",
+      "response": "{id,name,type,tools,knowledge,deploymentHistory}",
+      "description": "Get agent details"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/agents/{id}",
+      "response": "{id,name,type,tools,knowledge,updatedAt}",
+      "description": "Update an agent configuration"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/agents/{id}",
+      "response": "{deleted:true}",
+      "description": "Delete an agent"
+    },
+    {
+      "method": "GET",
+      "path": "/api/knowledge",
+      "response": "[{id,source,type,lastUpdated}]",
+      "description": "List knowledge sources"
+    },
+    {
+      "method": "POST",
+      "path": "/api/deployments",
+      "response": "{id,agentId,status,startedAt,endedAt}",
+      "description": "Deploy a tailored agent"
+    }
+  ],
+  "frontend_endpoints": [
+    "/api/agents",
+    "/api/agents/*",
+    "/api/c/*/auth/*",
+    "/api/c/*/auth/me",
+    "/api/deployments",
+    "/api/knowledge",
+    "/api/metrics"
+  ],
+  "backend_endpoints": [
+    "/api/agents",
+    "/api/agents/*",
+    "/api/ai/complete",
+    "/api/chart-data",
+    "/api/checkout",
+    "/api/deployments",
+    "/api/info",
+    "/api/knowledge",
+    "/api/metrics",
+    "/api/portal",
+    "/api/recent-activity",
+    "/api/stats",
+    "/api/subscription",
+    "/api/webhook",
+    "/health"
+  ],
   "components": [],
   "known_issues": [],
-  "roadmap": [],
-  "next_action": "",
+  "roadmap": [
+    {
+      "id": "m1",
+      "title": "Core dashboard + metrics endpoint",
+      "status": "done"
+    },
+    {
+      "id": "m2",
+      "title": "Agent CRUD + deployment flow",
+      "status": "pending"
+    },
+    {
+      "id": "m3",
+      "title": "Knowledge source management",
+      "status": "pending"
+    },
+    {
+      "id": "m4",
+      "title": "Usage analytics and reporting",
+      "status": "pending"
+    }
+  ],
+  "next_action": "Build next milestone: Agent CRUD + deployment flow",
   "focus_cycle": 3,
-  "history": [],
-  "updated_at": "2026-08-16T20:43:01.543311+00:00",
+  "history": [
+    {
+      "ts": "2026-08-16T20:47:33.688131",
+      "summary": "saas_dashboard build — vite_ok=True, connection_ok=True",
+      "vite_ok": true,
+      "connection_ok": true
+    }
+  ],
+  "updated_at": "2026-08-16T20:47:33.688152+00:00",
   "stage": "build",
   "goal": "Ship a working product people can visit",
   "goal_why": "no site is live yet"
