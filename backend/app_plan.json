@@ -1,0 +1,132 @@
+{
+  "app_type": "saas_dashboard",
+  "app_name": "QL Agents",
+  "brand_name": "QL Agents",
+  "tagline": "Tailored agents that cut deployment time by 40%",
+  "primary_color": "#0A1F44",
+  "accent_color": "#00B4D8",
+  "secondary_color": "#F0F4F8",
+  "font_heading": "Space Grotesk",
+  "font_body": "DM Sans",
+  "voice_tone": "precise, professional, innovative, trustworthy",
+  "logo_concept": "A stylized 'Q' with an agent node network inside, representing intelligent connections.",
+  "brand_values": [
+    "Tailored precision",
+    "Expert knowledge",
+    "Proven reliability"
+  ],
+  "sections": [
+    "Hero",
+    "Features",
+    "How It Works",
+    "Pricing",
+    "Testimonials",
+    "Contact"
+  ],
+  "backend_resources": [
+    "agents",
+    "deployments",
+    "metrics",
+    "knowledge",
+    "permissions"
+  ],
+  "features": [
+    "Highly tailored agents",
+    "Specialized knowledge integration",
+    "Custom tools",
+    "Mission-focused deployment"
+  ],
+  "pricing_tiers": [
+    "Starter: $499/mo - 1 tailored agent, 5 knowledge sources, basic analytics",
+    "Growth: $1,499/mo - 5 tailored agents, 20 knowledge sources, advanced analytics",
+    "Enterprise: Custom - Unlimited agents, dedicated support, custom integrations"
+  ],
+  "target_customer": "Companies and leaders requiring specialized knowledge and tools",
+  "key_metric": "40% faster deployment",
+  "hero_stats": [
+    {
+      "value": "40%",
+      "label": "faster deployment"
+    },
+    {
+      "value": "100%",
+      "label": "tailored to your needs"
+    },
+    {
+      "value": "24/7",
+      "label": "agent availability"
+    }
+  ],
+  "api_contract": [
+    {
+      "method": "GET",
+      "path": "/api/metrics",
+      "response": "[{deployments,timeSaved,usage}]",
+      "description": "Returns key deployment and usage metrics"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents",
+      "response": "[{id,name,status,type,lastDeployed}]",
+      "description": "List all tailored agents"
+    },
+    {
+      "method": "POST",
+      "path": "/api/agents",
+      "response": "{id,name,status,type,createdAt}",
+      "description": "Create a new tailored agent"
+    },
+    {
+      "method": "GET",
+      "path": "/api/agents/{id}",
+      "response": "{id,name,type,tools,knowledge,deploymentHistory}",
+      "description": "Get agent details"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/agents/{id}",
+      "response": "{id,name,type,tools,knowledge,updatedAt}",
+      "description": "Update an agent configuration"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/agents/{id}",
+      "response": "{deleted:true}",
+      "description": "Delete an agent"
+    },
+    {
+      "method": "GET",
+      "path": "/api/knowledge",
+      "response": "[{id,source,type,lastUpdated}]",
+      "description": "List knowledge sources"
+    },
+    {
+      "method": "POST",
+      "path": "/api/deployments",
+      "response": "{id,agentId,status,startedAt,endedAt}",
+      "description": "Deploy a tailored agent"
+    }
+  ],
+  "roadmap": [
+    {
+      "id": "m1",
+      "title": "Core dashboard + metrics endpoint",
+      "status": "pending"
+    },
+    {
+      "id": "m2",
+      "title": "Agent CRUD + deployment flow",
+      "status": "pending"
+    },
+    {
+      "id": "m3",
+      "title": "Knowledge source management",
+      "status": "pending"
+    },
+    {
+      "id": "m4",
+      "title": "Usage analytics and reporting",
+      "status": "pending"
+    }
+  ]
+}
